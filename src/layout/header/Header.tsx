@@ -6,7 +6,7 @@ import {Menu} from "../../components/menu/Menu";
 export const Header = () => {
     return (
         <StyledHeader>
-            <Menu/>
+            <Menu items={['Home', 'Skills', 'Works', 'Testimony', 'Contact']}/>
             <Logo/>
         </StyledHeader>
     )

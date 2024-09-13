@@ -14,6 +14,6 @@ export const SectionTitle = (props: SectionTitlePropsType) => {
 };
 
 const StyledTitle = styled.h2`
-  color: #7467ec;
+  color: #ffffff;
   text-align: center;
 `
