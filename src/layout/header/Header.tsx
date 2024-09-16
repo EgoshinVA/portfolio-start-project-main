@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import {Logo} from "../../components/logo/Logo";
-import {Menu} from "../../components/menu/Menu";
 import {Container} from "../../components/Container";
 import {FlexWrapper} from "../../components/FlexWrapper";
+import {HeaderMenu} from "./headerMenu/HeaderMenu";
 
 export const Header = () => {
     return (
@@ -11,7 +11,7 @@ export const Header = () => {
             <Container>
                 <FlexWrapper justify={'space-between'} align={'center'}>
                     <Logo/>
-                    <Menu items={['Home', 'Skills', 'Works', 'Testimony', 'Contact']}/>
+                    <HeaderMenu items={['Home', 'Skills', 'Works', 'Testimony', 'Contact']}/>
                 </FlexWrapper>
             </Container>
         </StyledHeader>
@@ -19,5 +19,11 @@ export const Header = () => {
 }
 
 const StyledHeader = styled.header`
-  background-color: #575555;
+  background-color: #1F1F20E5;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
 `
