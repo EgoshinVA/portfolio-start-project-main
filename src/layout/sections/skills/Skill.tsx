@@ -28,18 +28,11 @@ const StyledSkill = styled.div`
   padding: 62px 20px 40px;
 `
 const SkillTitle = styled.h3`
-  font-family: Josefin Sans, sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 1px;
   margin: 70px 0 15px;
   text-transform: uppercase;
 `
 const SkillText = styled.p`
   text-align: center;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.4;
 `
 
 const IconWrapper = styled.div`

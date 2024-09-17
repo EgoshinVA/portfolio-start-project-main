@@ -1,18 +1,19 @@
 import React from 'react';
 import styled from "styled-components";
+import {Link} from "../../../../components/Link";
 
 type MenuPropsType = {
     items: Array<string>
 }
 
-export const Menu = (props: MenuPropsType) => {
+export const TabMenu = (props: MenuPropsType) => {
     let items = props.items.map((i, index) => <MenuItem key={index} title={i}/>)
     return (
-        <StyledNav>
+        <StyledTabMenu>
             <ul>
                 {items}
             </ul>
-        </StyledNav>
+        </StyledTabMenu>
     );
 };
 
@@ -22,16 +23,20 @@ type MenuItemPropsType = {
 
 const MenuItem = (props: MenuItemPropsType) => {
     return (
-        <li>
-            <a href="">{props.title}</a>
-        </li>
+        <ListItem>
+            <Link href="src/layout/sections/works/tabMenu">{props.title}</Link>
+        </ListItem>
     );
 };
 
-const StyledNav = styled.nav`
+const StyledTabMenu = styled.nav`
   ul {
     display: flex;
-    gap: 30px;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 50px;
   }
 `
+
+const ListItem = styled.li``
 
