@@ -40,6 +40,6 @@ const StyledTitle = styled.h2`
   }
 
   @media ${theme.media.mobile}{
-    margin-bottom: 50px;
+    margin-bottom: 75px;
   }
 `
