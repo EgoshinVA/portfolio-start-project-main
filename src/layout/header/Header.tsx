@@ -5,10 +5,11 @@ import {Container} from "../../components/Container";
 import {FlexWrapper} from "../../components/FlexWrapper";
 import {HeaderMenu} from "./headerMenu/HeaderMenu";
 import {MobileMenu} from "./mobileMenu/MobileMenu";
+import {S} from './Header_Styles'
 
-export const Header = () => {
+export const Header: React.FC = () => {
     return (
-        <StyledHeader>
+        <S.Header>
             <Container>
                 <FlexWrapper justify={'space-between'} align={'center'}>
                     <Logo/>
@@ -16,16 +17,7 @@ export const Header = () => {
                     <MobileMenu items={['Home', 'Skills', 'Works', 'Testimony', 'Contact']}/>
                 </FlexWrapper>
             </Container>
-        </StyledHeader>
+        </S.Header>
     )
 }
 
-const StyledHeader = styled.header`
-  background-color: #1F1F20E5;
-  padding: 20px 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 99999;
-`
