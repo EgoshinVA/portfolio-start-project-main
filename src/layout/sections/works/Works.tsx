@@ -8,7 +8,7 @@ import {TabMenu} from "./tabMenu/TabMenu";
 import {Container} from "../../../components/Container";
 import {S} from './Works_Styles';
 
-const workItems = [
+const workData = [
     {
         image: proj1,
         title: 'Social Network',
@@ -28,7 +28,7 @@ export const Works: React.FC = () => {
                 <SectionTitle title='My Works'/>
                 <TabMenu items={['ALL', 'LANDING PAGE', 'REACT', 'SPA']}/>
                 <FlexWrapper justify={'space-between'} align={'flex-start'} wrap>
-                    {workItems.map((item, index) =>
+                    {workData.map((item, index) =>
                         <Work key={index} image={item.image} title={item.title}
                               text={item.text}/>)}
                 </FlexWrapper>
