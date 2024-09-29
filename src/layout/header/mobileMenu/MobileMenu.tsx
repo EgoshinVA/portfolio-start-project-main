@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Menu} from "../menu/Menu";
 import { S } from './MobileMenu_Styles';
 
@@ -7,12 +7,13 @@ type HeaderMenuPropsType = {
 }
 
 export const MobileMenu: React.FC<HeaderMenuPropsType> = (props) => {
+    const [value, setPopup] = useState(false)
     return (
         <S.MobileMenu>
-            <S.BurgerButton isOpen={false}>
+            <S.BurgerButton isOpen={value}>
                 <span></span>
             </S.BurgerButton>
-            <S.MobileMenuPopup isOpen={false}>
+            <S.MobileMenuPopup isOpen={value}>
                 <Menu items={props.items}/>
             </S.MobileMenuPopup>
         </S.MobileMenu>

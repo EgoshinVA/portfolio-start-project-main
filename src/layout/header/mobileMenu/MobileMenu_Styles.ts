@@ -1,13 +1,7 @@
 import styled, {css} from "styled-components";
 import {theme} from "../../../styles/Theme";
 
-const MobileMenu = styled.nav`
-  display: none;
-
-  @media ${theme.media.tablet} {
-    display: block;
-  }
-`
+const MobileMenu = styled.nav``
 
 const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
   position: fixed;
