@@ -20,7 +20,7 @@ const SkillText = styled.p`
   text-align: center;
 `
 
-export const IconWrapper = styled.div`
+const IconWrapper = styled.div`
   position: relative;
   
   
@@ -43,4 +43,5 @@ export const S = {
     Skill,
     SkillTitle,
     SkillText,
+    IconWrapper
 }
