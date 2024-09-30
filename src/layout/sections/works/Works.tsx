@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {SectionTitle} from "../../../components/SectionTitle";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Work} from "./Work";
@@ -12,23 +12,59 @@ const workData = [
     {
         image: proj1,
         title: 'Social Network',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit  ut labore et dolore magna aliqua Ut enim'
+        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        type: 'spa'
     },
     {
         image: proj2,
         title: 'Timer',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit  ut labore et dolore magna aliqua Ut enim',
+        type: 'react'
     }
 ]
 
+export type TabsStatusType = 'all' | 'landing' | 'react' | 'spa'
+export type TabsItemsType = Array<{ title: string, status: TabsStatusType }>
+
+
+const tabsItems: TabsItemsType = [
+    {
+        title: "ALL",
+        status: 'all'
+    },
+    {
+        title: "LANDING PAGE",
+        status: 'landing'
+    },
+    {
+        title: "REACT",
+        status: 'react'
+    },
+    {
+        title: "SPA",
+        status: 'spa'
+    },
+
+]
+
 export const Works: React.FC = () => {
+    const [currentFilterStatus, setCurrentFilterStatus] = useState<TabsStatusType>('all')
+
+    const filteredWorks = workData.filter((work) =>
+        currentFilterStatus === 'all' ? true : work.type === currentFilterStatus
+    );
+
+    function changeFilterStatus(value: TabsStatusType){
+        setCurrentFilterStatus(value)
+    }
+
     return (
         <S.Works>
             <Container>
                 <SectionTitle title='My Works'/>
-                <TabMenu items={['ALL', 'LANDING PAGE', 'REACT', 'SPA']}/>
+                <TabMenu changeFilterStatus={changeFilterStatus} items={tabsItems} currentFilterStatus={currentFilterStatus}/>
                 <FlexWrapper justify={'space-between'} align={'flex-start'} wrap>
-                    {workData.map((item, index) =>
+                    {filteredWorks.map((item, index) =>
                         <Work key={index} image={item.image} title={item.title}
                               text={item.text}/>)}
                 </FlexWrapper>
