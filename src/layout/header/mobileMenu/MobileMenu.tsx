@@ -7,13 +7,18 @@ type HeaderMenuPropsType = {
 }
 
 export const MobileMenu: React.FC<HeaderMenuPropsType> = (props) => {
-    const [value, setPopup] = useState(false)
+    const [menuIsOpen, setMenuIsOpen] = useState(false)
+
+    const onButtonClick = () => {
+        setMenuIsOpen(!menuIsOpen)
+    }
+
     return (
         <S.MobileMenu>
-            <S.BurgerButton isOpen={value}>
+            <S.BurgerButton isOpen={menuIsOpen} onClick={onButtonClick}>
                 <span></span>
             </S.BurgerButton>
-            <S.MobileMenuPopup isOpen={value}>
+            <S.MobileMenuPopup isOpen={menuIsOpen} onClick={onButtonClick}>
                 <Menu items={props.items}/>
             </S.MobileMenuPopup>
         </S.MobileMenu>
