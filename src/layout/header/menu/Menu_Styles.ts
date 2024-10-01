@@ -1,13 +1,6 @@
 import styled from "styled-components";
 import {theme} from "../../../styles/Theme";
-
-const Link = styled.a`
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 30px;
-  font-weight: 400;
-  text-align: center;
-  color: transparent;
-`
+import {Link} from "react-scroll";
 
 const Mask = styled.span`
   position: absolute;
@@ -28,8 +21,12 @@ const Mask = styled.span`
   }
 `
 
-const ListItem = styled.li`
-  position: relative;
+const NavLink = styled(Link)`
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  text-align: center;
+  color: transparent;
 
   &::before {
     content: '';
@@ -46,7 +43,7 @@ const ListItem = styled.li`
     transform: scale(0);
   }
 
-  &:hover {
+  &:hover, &.active {
     &::before {
       transform: scale(1);
     }
@@ -62,8 +59,12 @@ const ListItem = styled.li`
   }
 `
 
+const ListItem = styled.li`
+  position: relative;
+`
+
 export const S = {
-    Link,
+    NavLink,
     Mask,
     ListItem
 }

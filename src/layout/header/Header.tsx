@@ -22,8 +22,7 @@ export const Header: React.FC = () => {
             <Container>
                 <FlexWrapper justify={'space-between'} align={'center'}>
                     <Logo/>
-                    {width < breakpoint ? <MobileMenu items={['Home', 'Skills', 'Works', 'Testimony', 'Contact']}/> :
-                        <HeaderMenu items={['Home', 'Skills', 'Works', 'Testimony', 'Contact']}/>}
+                    {width < breakpoint ? <MobileMenu/> : <HeaderMenu/>}
                 </FlexWrapper>
             </Container>
         </S.Header>
