@@ -2,7 +2,9 @@ import React from 'react';
 import photo from '../../../assets/images/photo.webp'
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Container} from "../../../components/Container";
-import { S } from './Main_Styles';
+import {S} from './Main_Styles';
+import Typewriter from 'typewriter-effect';
+import Tilt from 'react-parallax-tilt';
 
 export const Main: React.FC = () => {
     return (
@@ -12,12 +14,23 @@ export const Main: React.FC = () => {
                     <div>
                         <S.SmallText>Hi There</S.SmallText>
                         <S.Name>I am <span>Vitaliy Egoshin</span></S.Name>
-                        <S.Title>A Web Developer.</S.Title>
+                        <S.Title>
+                            <p>A Web Developer.</p>
+                            <Typewriter
+                                options={{
+                                    strings: ['A Web Developer.'],
+                                    autoStart: true,
+                                    loop: true,
+                                }}
+                            /></S.Title>
+
                     </div>
 
-                    <S.PhotoWrapper>
-                        <S.Photo src={photo} alt="photo"/>
-                    </S.PhotoWrapper>
+                    <Tilt>
+                        <S.PhotoWrapper>
+                            <S.Photo src={photo} alt="photo"/>
+                        </S.PhotoWrapper>
+                    </Tilt>
                 </FlexWrapper>
             </Container>
         </S.Main>
