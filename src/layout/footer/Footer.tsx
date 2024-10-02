@@ -11,13 +11,13 @@ export const Footer: React.FC = () => {
             <FlexWrapper direction={'column'} align={'center'}>
                 <S.Name>Vitaliy</S.Name>
                 <S.SocialList>
-                    {footerIconData.map((item, index) =>
-                        <S.SocialItem key={index}>
-                            <S.SocialLink>
-                                <Icon height={'21'} width={'21'} viewBox={'0 0 21 21'} iconId={item}/>
-                            </S.SocialLink>
-                        </S.SocialItem>
-                    )}
+                        {footerIconData.map((item, index) =>
+                            <S.SocialItem key={index}>
+                                <S.SocialLink>
+                                    <Icon height={'21'} width={'21'} viewBox={'0 0 21 21'} iconId={item}/>
+                                </S.SocialLink>
+                            </S.SocialItem>
+                        )}
                 </S.SocialList>
                 <S.Copyright>© 2024 Vitaliy Egoshin, All Rights Reserved.</S.Copyright>
             </FlexWrapper>

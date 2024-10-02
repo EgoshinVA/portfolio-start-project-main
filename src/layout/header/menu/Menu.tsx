@@ -8,7 +8,7 @@ export const Menu: React.FC = () => {
         <ul>
             {items.map((item, index) =>
                 <S.ListItem key={index}>
-                    <S.NavLink activeClass={'active'} to={item.toLowerCase()} smooth={true} spy={true} offset={-50}>
+                    <S.NavLink activeClass={'active'} to={item.toLowerCase()} smooth={true} spy={true}>
                         {item}
                         <S.Mask>
                             <span>{item}</span>

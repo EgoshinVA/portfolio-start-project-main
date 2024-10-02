@@ -1,10 +1,9 @@
 import React from 'react';
-import styled from "styled-components";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {SectionTitle} from "../../../components/SectionTitle";
 import {Skill} from "./Skill";
 import {Container} from "../../../components/Container";
-import { S } from './Skill_Styles';
+import {S} from './Skill_Styles';
 
 const skillData = [
     {
@@ -45,15 +44,14 @@ export const Skills: React.FC = () => {
             <Container>
                 <SectionTitle title='My Skills'/>
                 <FlexWrapper wrap justify='space-between'>
-                    {skillData.map((item, index) =>
-                        <Skill key={index}
-                               skillIcon={item.skillIcon}
-                               skillTitle={item.skillTitle}
-                               skillText={item.skillText}/>
-                    )}
+                        {skillData.map((item, index) =>
+                            <Skill key={index}
+                                   skillIcon={item.skillIcon}
+                                   skillTitle={item.skillTitle}
+                                   skillText={item.skillText}/>
+                        )}
                 </FlexWrapper>
             </Container>
-
         </S.Skills>
     );
 };
